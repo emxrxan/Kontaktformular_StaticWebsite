@@ -1,0 +1,267 @@
+/*=== Farben ===*//*
+
+grau:       #33333
+weiß:       #fffff
+hell-grau:  #595959
+
+*//*=== Farben ===*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*=== GRID ===*/
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 2fr 0.5fr;
+    gap: 1px;
+    grid-template-areas: 
+    "nav"
+    "service"
+    "kontakt"
+    "footer";
+    height: 100%;
+}
+
+/*=== GRID ===*/
+
+
+/*=== NAVIGATION ===*/
+
+.grid-container > nav{
+    grid-area: nav;
+    border-bottom: 1px solid black;
+    background-color: #595959
+}
+
+.grid-container > nav > a{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-container > nav img{
+    width: 65px;
+    height: auto;
+}
+
+/*=== NAVIGATION ===*/
+
+
+/*=== SERVICE ===*/
+
+.grid-container > .service{
+    grid-area: service;
+    background-color: #333333;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+}
+
+.grid-container > .service > .info{
+    text-align: center;
+    background-color: #FFFF;
+    width: 20%;
+    height: 90%;
+    padding: 0.5rem;
+    color: #333333;
+    word-wrap: break-word;
+    margin: 0.8rem;
+}
+
+.grid-container > .service > .info > p{
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.grid-container > .service > .info > .icon{
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: 0.1rem;
+    margin-bottom: 0.5rem;
+    border: 3px solid #333333;
+    border-radius: 100%;
+    transition: all 1s;
+}
+
+.grid-container > .service > .info > .icon:hover{
+    transform: rotateZ(360deg);
+    transition: transform 1s;
+}
+
+.grid-container > .service > .info > #place{
+    background-image: url(../bilder/stornieren.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.grid-container > .service > .info > #telephone{
+    background-image: url(../bilder/stornieren.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.grid-container > .service > .info > #FAX{
+    background-image: url(../bilder/stornieren.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.grid-container > .service > .info > #email{
+    background-image: url(../bilder/stornieren.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*=== SERVICE ===*/
+
+
+/*=== KONTAKT ===*/
+
+.grid-container > .kontakt-info{
+    grid-area: kontakt;
+    background-color: #595959;
+    color: #FFFF;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.grid-container > .kontakt-info > form,
+.grid-container > .kontakt-info > .text {
+    width: 40%;
+}
+
+.grid-container > .kontakt-info > form > *{
+    display: block;
+    background-color: #595959;
+}
+
+.grid-container > .kontakt-info > form > input,
+.grid-container > .kontakt-info > form > textarea,
+.grid-container > .kontakt-info > form > button{
+    padding: 1rem;
+    margin: 0.5rem;
+    border: none;
+    border-bottom: 3px solid #FFFF;
+    width: 100%;
+}
+
+.grid-container > .kontakt-info > form > button{
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: #FFFF;
+    color: #333333;
+    border-radius: 0.5rem;
+    border: none;
+    transition: all 0.3s;
+}
+
+.grid-container > .kontakt-info > form > button:hover{
+    cursor: pointer;
+    color: #FFFF;
+    background-color: #333333;
+    transform: scale(1.1);
+    transition: all 0.3s;
+}
+
+.grid-container > .kontakt-info > form > textarea{
+    height: 25%;
+}
+
+.grid-container > .kontakt-info p{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    line-height: 2rem;
+}
+
+.grid-container > .kontakt-info p:last-child{
+    margin-top: 0.5rem;
+}
+
+.grid-container > .kontakt-info img{
+    width: 200px;
+    height: auto;
+    margin-right: 1rem;
+    float: left;
+}
+
+/*=== KONTAKT ===*/
+
+
+/*=== FOOTER ===*/
+
+.grid-container > footer{
+    grid-area: footer;
+    background-color: #333333;
+    color: #FFFF;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.grid-container > footer > p{
+    padding: 1rem;
+    line-height: 2rem;
+}
+
+.grid-container > footer > p > a{
+    color: #d3d2d2;
+}
+
+/*=== FOOTER ===*/
+
+/*=== RESPONSIVE ===*/
+
+@media (max-width: 990px){
+
+    .grid-container > .service > .info{
+        width: 40%;
+        height: 47%;
+        margin: 0.4rem;
+    }
+
+    .grid-container > .kontakt-info{
+        flex-direction: column;
+    }
+
+    .grid-container > .kontakt-info > form,
+    .grid-container > .kontakt-info > .text {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .grid-container > .kontakt-info > form{
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 500px){
+    .grid-container > .service > .info{
+        width: 100%;
+        height: 23%;
+    }
+
+    .grid-container > .kontakt-info > .text > h1{
+        font-size: 1.7rem;
+        word-wrap: break-word;
+    }
+}
+
+/*=== RESPONSIVE ===*/
+
